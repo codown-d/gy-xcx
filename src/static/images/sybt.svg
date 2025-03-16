@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="154px" height="50px" viewBox="0 0 154 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>mdpi/首页标题</title>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" font-weight="normal">
+        <g id="首页" transform="translate(-181.000000, -125.000000)" fill="#333333">
+            <g id="首页标题" transform="translate(181.000000, 125.000000)">
+                <text id="智能匹配" fill-rule="nonzero" font-family="DingTalk-JinBuTi, DingTalk JinBuTi" font-size="26" font-style="italic">
+                    <tspan x="0" y="25">智能匹配</tspan>
+                </text>
+                <text id="一键筛选您可能感兴趣的服务" opacity="0.597074963" font-family="AlibabaPuHuiTi-Regular, Alibaba PuHuiTi" font-size="12">
+                    <tspan x="0.248" y="46">一键筛选您可能感兴趣的服务</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>
