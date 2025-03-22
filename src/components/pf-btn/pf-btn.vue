@@ -1,13 +1,11 @@
 <template>
-  <view class="relative" :class="customClass">
-    <view class="flex justify-between items-center">
-      <view class="text-[32rpx] flex flex-col font-bold text-[#333]">
-        {{ title }}
-        <view class="bg-bottom mt-[-14rpx]"></view>
-      </view>
-      <slot></slot>
-    </view>
-  </view>
+  <button
+    class="w-fit inline px-[10rpx] py-[2rpx] rounded-[32rpx] flex btn-bg text-[#fff] items-center text-[20rpx] h-[32rpx]"
+    :class="customClass"
+  >
+    <slot></slot>
+    <slot name="icon"></slot>
+  </button>
 </template>
 
 <script lang="ts" setup>
@@ -28,11 +26,3 @@ const goto = () => {
 }
 const customClass = computed(() => props.customClass)
 </script>
-<style>
-.bg-bottom {
-  width: 136rpx;
-  height: 14rpx;
-  background: linear-gradient(90deg, rgba(60, 91, 246, 0.4) 0%, rgba(123, 157, 241, 0) 100%);
-  border-radius: 7rpx;
-}
-</style>

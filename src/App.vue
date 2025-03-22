@@ -60,4 +60,9 @@ view {
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
 }
+
+.btn-bg {
+  background: linear-gradient(90deg, #3c5bf6 0%, #7b9df1 100%) !important;
+  box-shadow: 0rpx 16rpx 24rpx 0rpx rgba(0, 8, 170, 0.16) !important;
+}
 </style>

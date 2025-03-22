@@ -51,12 +51,6 @@ export default defineUniPages({
         pagePath: 'pages/demo1/index',
         text: 'demo1',
       },
-      {
-        iconPath: 'static/tabbar/example.png',
-        selectedIconPath: 'static/tabbar/exampleHL.png',
-        pagePath: 'pages/demo2/index',
-        text: 'demo2',
-      },
     ],
   },
 })

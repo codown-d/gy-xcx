@@ -35,5 +35,4 @@ const goto = () => {
   emit('goto') // 触发名为 'trigger' 的事件
 }
 const customClass = computed(() => props.customClass)
-console.log(props)
 </script>

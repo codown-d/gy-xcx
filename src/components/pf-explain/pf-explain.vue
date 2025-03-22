@@ -1,11 +1,10 @@
 <template>
-  <view class="relative" :class="customClass">
-    <view class="flex justify-between items-center">
-      <view class="text-[32rpx] flex flex-col font-bold text-[#333]">
+  <view class="relative flex" :class="customClass">
+    <view class="text-[32rpx] font-bold text-[#333]">
+      <view class="flex items-center">
         {{ title }}
-        <view class="bg-bottom mt-[-14rpx]"></view>
       </view>
-      <slot></slot>
+      <view class="text-[#999] text-[20rpx] font-500">{{ subTitle }}</view>
     </view>
   </view>
 </template>
@@ -16,6 +15,7 @@ import { computed, defineProps, defineEmits } from 'vue'
 const props = defineProps({
   customClass: String, // Vue 3 setup 模式，接收 class
   title: String,
+  subTitle: String,
 })
 // 定义一个事件，用于触发父组件的方法
 const emit = defineEmits<{
@@ -28,11 +28,3 @@ const goto = () => {
 }
 const customClass = computed(() => props.customClass)
 </script>
-<style>
-.bg-bottom {
-  width: 136rpx;
-  height: 14rpx;
-  background: linear-gradient(90deg, rgba(60, 91, 246, 0.4) 0%, rgba(123, 157, 241, 0) 100%);
-  border-radius: 7rpx;
-}
-</style>

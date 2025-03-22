@@ -47,12 +47,6 @@
         "selectedIconPath": "static/tabbar/exampleHL.png",
         "pagePath": "pages/demo1/index",
         "text": "demo1"
-      },
-      {
-        "iconPath": "static/tabbar/example.png",
-        "selectedIconPath": "static/tabbar/exampleHL.png",
-        "pagePath": "pages/demo2/index",
-        "text": "demo2"
       }
     ]
   },
@@ -96,7 +90,23 @@
       "needLogin": true
     },
     {
+      "path": "pages/finance/index",
+      "type": "page",
+      "layout": "finance",
+      "style": {
+        "navigationStyle": "custom",
+        "navigationBarTitleText": "一键融资"
+      }
+    },
+    {
       "path": "pages/home/index",
+      "type": "page",
+      "style": {
+        "navigationBarTitleText": "home"
+      }
+    },
+    {
+      "path": "pages/login/index",
       "type": "page",
       "style": {
         "navigationBarTitleText": "home"

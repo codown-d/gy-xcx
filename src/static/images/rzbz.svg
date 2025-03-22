@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="380px" height="58px" viewBox="0 0 380 58" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>mdpi/融资步骤</title>
+    <defs>
+        <linearGradient x1="0%" y1="50%" x2="100%" y2="50%" id="linearGradient-1">
+            <stop stop-color="#FFFFFF" stop-opacity="0.298951049" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="0%" y1="50%" x2="100%" y2="50%" id="linearGradient-2">
+            <stop stop-color="#FFFFFF" stop-opacity="0.298951049" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="0%" y1="50%" x2="100%" y2="50%" id="linearGradient-3">
+            <stop stop-color="#FFFFFF" stop-opacity="0.298951049" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="一键融资" transform="translate(5.000000, -168.000000)">
+            <g id="融资步骤" transform="translate(-5.000000, 168.000000)">
+                <path d="M-4.26325641e-14,0 L-4.26325641e-14,58 L98.4891969,58 C100.095576,58 101.634871,57.3558556 102.762487,56.2117684 L125.431362,33.2117684 C127.733642,30.8758588 127.733642,27.1241412 125.431362,24.7882316 L102.762487,1.78823157 C101.634871,0.644144363 100.095576,-3.84780072e-15 98.4891969,0 L-4.26325641e-14,0 L-4.26325641e-14,0 Z" id="路径-12" fill="url(#linearGradient-1)" opacity="0.598795573"></path>
+                <path d="M113.949937,5.09125767 L133.128615,24.8174847 C135.392714,27.1462234 135.392714,30.8537766 133.128615,33.1825153 L113.949937,52.9087423 C112.794968,54.0966863 112.821699,55.9959932 114.009643,57.1509629 C114.569631,57.6954077 115.319871,58 116.1009,58 L230.489197,58 C232.095576,58 233.634871,57.3558556 234.762487,56.2117684 L257.431362,33.2117684 C259.733642,30.8758588 259.733642,27.1241412 257.431362,24.7882316 L234.762487,1.78823157 C233.634871,0.644144363 232.095576,6.81034032e-15 230.489197,0 L116.1009,0 C114.444046,2.96889445e-15 113.1009,1.34314575 113.1009,3 C113.1009,3.7810297 113.405493,4.53126904 113.949937,5.09125767 Z" id="路径-12备份" fill="url(#linearGradient-2)" opacity="0.598795573"></path>
+                <path d="M245.949937,5.09125767 L265.128615,24.8174847 C267.392714,27.1462234 267.392714,30.8537766 265.128615,33.1825153 L245.949937,52.9087423 C244.794968,54.0966863 244.821699,55.9959932 246.009643,57.1509629 C246.569631,57.6954077 247.319871,58 248.1009,58 L380,58 L380,58 L380,0 L248.1009,0 C246.444046,-4.58062212e-15 245.1009,1.34314575 245.1009,3 C245.1009,3.7810297 245.405493,4.53126904 245.949937,5.09125767 Z" id="路径-12备份-2" fill="url(#linearGradient-3)" opacity="0.598795573"></path>
+                <text id="01" opacity="0.139344" font-family="AlibabaPuHuiTi-Bold, Alibaba PuHuiTi" font-size="28" font-weight="bold" fill="#404876">
+                    <tspan x="27" y="34">01</tspan>
+                </text>
+                <text id="02" opacity="0.139344" font-family="AlibabaPuHuiTi-Bold, Alibaba PuHuiTi" font-size="28" font-weight="bold" fill="#404876">
+                    <tspan x="151" y="34">02</tspan>
+                </text>
+                <text id="03" opacity="0.139344" font-family="AlibabaPuHuiTi-Bold, Alibaba PuHuiTi" font-size="28" font-weight="bold" fill="#404876">
+                    <tspan x="283" y="34">03</tspan>
+                </text>
+                <text id="发布需求" font-family="FontquanXinYiGuanHeiTi-Regular, FontquanXinYiGuanHeiTi" font-size="16" font-weight="normal" fill="#5F6583">
+                    <tspan x="41.3" y="40">发布需求</tspan>
+                </text>
+                <text id="贷款审批" font-family="FontquanXinYiGuanHeiTi-Regular, FontquanXinYiGuanHeiTi" font-size="16" font-weight="normal" fill="#5F6583">
+                    <tspan x="165.3" y="40">贷款审批</tspan>
+                </text>
+                <text id="贷款发放" font-family="FontquanXinYiGuanHeiTi-Regular, FontquanXinYiGuanHeiTi" font-size="16" font-weight="normal" fill="#5F6583">
+                    <tspan x="297.3" y="40">贷款发放</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -23,7 +23,7 @@ const navigateToInterceptor = {
   invoke({ url }: { url: string }) {
     // console.log(url) // /pages/route-interceptor/index?name=feige&age=30
     const path = url.split('?')[0]
-    console.log(path, 123)
+
     let needLoginPages: string[] = []
     // 为了防止开发时出现BUG，这里每次都获取一下。生产环境可以移到函数外，性能更好
     if (isDev) {

@@ -16,7 +16,10 @@
         src="/static/images/sybt.svg"
         class="absolute right-[80rpx] top-[50%] w-[308rpx] h-[100rpx]"
       />
-      <wd-button custom-class="btn-bg! absolute! right-[156rpx] bottom-[118rpx]">
+      <wd-button
+        @click="goPage('/finance/index')"
+        custom-class="btn-bg! absolute! right-[156rpx] bottom-[118rpx]"
+      >
         立即匹配
       </wd-button>
     </view>
@@ -56,19 +59,43 @@
         <view class="mt-[16rpx] text-[24rpx] text-[#666]">{{ item.label }}</view>
       </view>
     </view>
-    <view class="flex w-full h-28">
-      <pf-title title="政策服务" subTitle="原文+解读，快速了解时事"></pf-title>
+    <view class="relative w-full h-[162rpx] mt-[40rpx] px-[32rpx]">
+      <view class="absolute left-[40rpx] top-[40rpx] w-full h-full">
+        <view class="flex items-end">
+          <view class="w-[240rpx] ml-[46rpx]">
+            <pf-explain title="政策服务" subTitle="原文+解读，快速了解时事"></pf-explain>
+          </view>
+          <pf-btn>
+            去了解
+            <template #icon>
+              <wd-icon name="arrow-right" size="20rpx" color="#fff"></wd-icon>
+            </template>
+          </pf-btn>
+        </view>
+      </view>
+      <image src="/static/images/zffwbg.png" mode="widthFix" />
     </view>
-    <view class="text-center mt-8">
-      当前平台是：
-      <text class="text-green-500">{{ PLATFORM.platform }}</text>
+    <view class="px-[56rpx] mt-[38rpx] mb-[16rpx]">
+      <pf-title title="法律服务">
+        <view class="text-[20rpx] text-[#999]">
+          全部
+          <wd-icon name="arrow-right" size="20rpx" color="#999"></wd-icon>
+        </view>
+      </pf-title>
     </view>
-    <view class="text-center mt-4">
-      模板分支是：
-      <text class="text-green-500">base</text>
+
+    <view>
+      <template v-for="item in policyList" :key="item.id">
+        <pf-policy-card :title="item.title" :desc="item.summary">
+          <template #footer>
+            <view class="flex justify-between text-[] text-[20rpx]">
+              <view>发布时间：{{ timeFormat(item.add_time, 'YYYY年MM月DD日') }}</view>
+              <view>信息来源：{{ item.area_type_desc }}</view>
+            </view>
+          </template>
+        </pf-policy-card>
+      </template>
     </view>
-    <view @click="goto">跳转</view>
-    <view @click="goto">跳转</view>
   </view>
 </template>
 
@@ -77,6 +104,8 @@ import { TestEnum } from '@/typings'
 import PLATFORM from '@/utils/platform'
 import { getSystemInfoSync } from '@/utils/system'
 import { tabList } from '@/constant'
+import { servicePolicy } from '@/service/index/main'
+import { timeFormat, goPage } from '@/utils'
 
 defineOptions({
   name: 'Home',
@@ -96,7 +125,13 @@ const goto = () => {
   // })
 }
 // 测试 uni API 自动引入
+const policyList = ref([])
+const getServicePolicy = async () => {
+  const res = await servicePolicy({ theme_id: 0, page: 1, feature_id: 0, start: 0, limit: 10 })
+  policyList.value = res?.dataList
+}
 onLoad(() => {
+  getServicePolicy()
   console.log(author)
   console.log(TestEnum.A)
 })

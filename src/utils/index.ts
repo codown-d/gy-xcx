@@ -1,5 +1,6 @@
 import { pages, subPackages, tabBar } from '@/pages.json'
 import { isMpWeixin } from './platform'
+import dayjs from 'dayjs'
 
 const getLastPage = () => {
   // getCurrentPages() 至少有1个元素，所以不再额外判断
@@ -175,4 +176,12 @@ export const getEnvBaseUploadUrl = () => {
   }
 
   return baseUploadUrl
+}
+
+export const timeFormat = (time: number, format = 'YYYY年MM月DD HH:mm:ss') => {
+  return dayjs(time).format(format)
+}
+
+export const goPage = (url) => {
+  uni.navigateTo({ url: `/pages${url}` })
 }

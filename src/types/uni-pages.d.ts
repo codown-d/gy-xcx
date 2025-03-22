@@ -9,12 +9,14 @@ interface NavigateToOptions {
        "/pages/demo1/index" |
        "/pages/demo2/index" |
        "/pages/demo3/index" |
-       "/pages/home/index";
+       "/pages/finance/index" |
+       "/pages/home/index" |
+       "/pages/login/index";
 }
 interface RedirectToOptions extends NavigateToOptions {}
 
 interface SwitchTabOptions {
-  url: "/pages/index/index" | "/pages/about/about" | "/pages/home/index" | "/pages/demo1/index" | "/pages/demo2/index"
+  url: "/pages/index/index" | "/pages/about/about" | "/pages/home/index" | "/pages/demo1/index"
 }
 
 type ReLaunchOptions = NavigateToOptions | SwitchTabOptions;

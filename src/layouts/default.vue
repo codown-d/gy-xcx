@@ -1,5 +1,5 @@
 <template>
-  <wd-config-provider :themeVars="themeVars">
+  <wd-config-provider :themeVars="theme">
     <slot />
     <wd-toast />
     <wd-message-box />
@@ -7,16 +7,9 @@
 </template>
 
 <script lang="ts" setup>
+import { themeVars } from '@/constant'
 import type { ConfigProviderThemeVars } from 'wot-design-uni'
 
-const themeVars: ConfigProviderThemeVars = {
-  colorTheme: '#3C5BF6',
-  buttonPrimaryBgColor: '#3C5BF6',
-}
+const theme: ConfigProviderThemeVars = { ...themeVars }
 </script>
-<style lang="scss">
-.btn-bg {
-  background: linear-gradient(90deg, #3c5bf6 0%, #7b9df1 100%);
-  box-shadow: 0rpx 16rpx 24rpx 0rpx rgba(0, 8, 170, 0.16);
-}
-</style>
+<style></style>
