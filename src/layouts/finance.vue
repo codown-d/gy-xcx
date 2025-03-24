@@ -8,6 +8,7 @@
       />
       <view class="h-full" :style="{ marginTop: safeAreaInsets?.top + 'px' }">
         <wd-navbar
+          :title="title"
           :bordered="false"
           customClass="bg-transparent!"
           left-arrow
