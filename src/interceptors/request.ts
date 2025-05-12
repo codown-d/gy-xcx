@@ -29,7 +29,6 @@ const httpInterceptor = {
     // 非 http 开头需拼接地址
     if (!options.url.startsWith('http')) {
       // #ifdef H5
-      // console.log(__VITE_APP_PROXY__)
       if (JSON.parse(__VITE_APP_PROXY__)) {
         // 啥都不需要做
       } else {
@@ -44,16 +43,19 @@ const httpInterceptor = {
     }
     // 1. 请求超时
     options.timeout = 10000 // 10s
-    // 2. （可选）添加小程序端请求头标识
-    options.header = {
-      platform, // 可选，与 uniapp 定义的平台一致，告诉后台来源
-      ...options.header,
-    }
     // 3. 添加 token 请求头标识
     const userStore = useUserStore()
+    // const token = uni.getStorageSync('token')
     const { token } = userStore.userInfo as unknown as IUserInfo
+    const header: any = {}
     if (token) {
-      options.header.Authorization = `Bearer ${token}`
+      header.Authorization = `Bearer ${token}`
+      header.token = `${token}`
+    }
+    options.header = {
+      platform,
+      ...header,
+      ...options.header,
     }
   },
 }

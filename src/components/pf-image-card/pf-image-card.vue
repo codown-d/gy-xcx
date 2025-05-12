@@ -1,11 +1,13 @@
 <template>
   <view class="relative" :class="customClass">
-    <view class="text-[32rpx] font-bold text-[#333] absolute top-[24rpx] left-[28rpx]">
+    <view
+      class="text-[32rpx] font-bold text-[#333] absolute top-[24rpx] left-[28rpx]"
+      @click="goto"
+    >
       <view class="flex items-center">
         {{ title }}
         <view
           class="ml-1 rounded-[32rpx] w-[32rpx] h-[32rpx] bg-[#ccc] flex justify-center items-center"
-          @click="goto"
         >
           <wd-icon name="arrow-right" size="24rpx" color="#fff"></wd-icon>
         </view>

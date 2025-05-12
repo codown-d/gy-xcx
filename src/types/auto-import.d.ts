@@ -6,6 +6,7 @@
 export {}
 declare global {
   const EffectScope: typeof import('vue')['EffectScope']
+  const FinanceCard: typeof import('../hooks/index')['FinanceCard']
   const computed: typeof import('vue')['computed']
   const createApp: typeof import('vue')['createApp']
   const customRef: typeof import('vue')['customRef']
@@ -75,17 +76,17 @@ declare global {
   const triggerRef: typeof import('vue')['triggerRef']
   const unref: typeof import('vue')['unref']
   const useAttrs: typeof import('vue')['useAttrs']
+  const useColPickerData: typeof import('../hooks/useColPickerData')['useColPickerData']
   const useCssModule: typeof import('vue')['useCssModule']
   const useCssVars: typeof import('vue')['useCssVars']
+  const useFinanceCard: typeof import('../hooks/index')['useFinanceCard']
   const useId: typeof import('vue')['useId']
   const useModel: typeof import('vue')['useModel']
-  const useNavbarWeixin: (typeof import('../hooks/useNavbarWeixin'))['default']
   const useNavigation: typeof import('../hooks/index')['useNavigation']
   const useRequest: typeof import('../hooks/useRequest')['default']
   const useSlots: typeof import('vue')['useSlots']
   const useTemplateRef: typeof import('vue')['useTemplateRef']
   const useUpload: typeof import('../hooks/useUpload')['default']
-  const useUpload2: typeof import('../hooks/useUpload2')['default']
   const watch: typeof import('vue')['watch']
   const watchEffect: typeof import('vue')['watchEffect']
   const watchPostEffect: typeof import('vue')['watchPostEffect']
@@ -172,8 +173,10 @@ declare module 'vue' {
     readonly triggerRef: UnwrapRef<typeof import('vue')['triggerRef']>
     readonly unref: UnwrapRef<typeof import('vue')['unref']>
     readonly useAttrs: UnwrapRef<typeof import('vue')['useAttrs']>
+    readonly useColPickerData: UnwrapRef<typeof import('../hooks/useColPickerData')['useColPickerData']>
     readonly useCssModule: UnwrapRef<typeof import('vue')['useCssModule']>
     readonly useCssVars: UnwrapRef<typeof import('vue')['useCssVars']>
+    readonly useFinanceCard: UnwrapRef<typeof import('../hooks/index')['useFinanceCard']>
     readonly useId: UnwrapRef<typeof import('vue')['useId']>
     readonly useModel: UnwrapRef<typeof import('vue')['useModel']>
     readonly useNavigation: UnwrapRef<typeof import('../hooks/index')['useNavigation']>

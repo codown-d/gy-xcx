@@ -97,6 +97,10 @@
     "useId": true,
     "useModel": true,
     "useTemplateRef": true,
-    "useNavigation": true
+    "useNavigation": true,
+    "useNavigationSub": true,
+    "useColPickerData": true,
+    "FinanceCard": true,
+    "useFinanceCard": true
   }
 }

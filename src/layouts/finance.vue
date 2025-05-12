@@ -1,24 +1,28 @@
 <template>
   <wd-config-provider :themeVars="theme">
-    <view class="relative overflow-hidden h-[100vh]">
-      <image
-        class="w-full h-[588rpx] absolute top-0 z-[-1]"
-        src="/static/images/yjrz-bg.png"
-        mode="widthFix"
-      />
-      <view class="h-full" :style="{ marginTop: safeAreaInsets?.top + 'px' }">
+    <scroll-view :scroll-y="true" class="h-100vh" @scroll="handleScroll">
+      <view class="container" style="background-image: url('/static/images/yjrz-bg.png')">
         <wd-navbar
-          :title="title"
           :bordered="false"
+          :title="title"
           customClass="bg-transparent!"
-          left-arrow
+          :left-arrow="!isTab"
+          fixed
           @click-left="handleClickLeft"
+          safeAreaInsetTop
+          :custom-style="`background-color: rgba(255,255,255, ${opacity})!important`"
         ></wd-navbar>
-        <slot></slot>
+        <view
+          :style="{
+            paddingTop: safeAreaInsets?.top + 44 + 'px',
+          }"
+        >
+          <slot></slot>
+        </view>
       </view>
-      <wd-toast />
-      <wd-message-box />
-    </view>
+    </scroll-view>
+    <wd-toast />
+    <wd-message-box />
   </wd-config-provider>
 </template>
 
@@ -27,13 +31,22 @@ import { themeVars } from '@/constant'
 import type { ConfigProviderThemeVars } from 'wot-design-uni'
 import { getSystemInfoSync } from '@/utils/system'
 import { useNavigation } from '@/hooks'
+import { navigateBack } from '@/utils'
 
 const theme: ConfigProviderThemeVars = { ...themeVars }
 
 const { safeAreaInsets } = getSystemInfoSync()
-const { title } = useNavigation()
+const { title, getCurrentPage } = useNavigation()
+const { isTab = false } = getCurrentPage()
 const handleClickLeft = () => {
-  uni.navigateBack()
+  navigateBack()
 }
-onLoad(() => {})
+const opacity = ref(0)
+const handleScroll = (e: any) => {
+  if (e.detail.scrollTop > 100) {
+    opacity.value = 1
+  } else {
+    opacity.value = e.detail.scrollTop / 100
+  }
+}
 </script>

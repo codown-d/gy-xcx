@@ -1,6 +1,6 @@
 <template>
-  <wd-card :title="title" custom-title-class="font-bold" :class="customClass">
-    <view class="mb-[20rpx] text-[20rpx] text-[#999] font-[400]">
+  <wd-card :title="title" custom-title-class="font-bold" :class="customClass" @click="handleClick">
+    <view class="text-[20rpx] text-[#999] font-[400]" @click="handleClick">
       {{ desc }}
     </view>
     <template #footer>
@@ -18,5 +18,9 @@ const props = defineProps({
   desc: String,
 })
 const customClass = computed(() => props.customClass)
+const emits = defineEmits(['click']) // 定义 click 事件
+const handleClick = () => {
+  emits('click') // 触发父组件传递的 click 事件
+}
 </script>
 <style></style>

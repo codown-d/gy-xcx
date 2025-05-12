@@ -5,15 +5,17 @@
  * 我这里应为大部分都可以随便进入，所以使用黑名单
  */
 import { useUserStore } from '@/store'
-import { needLoginPages as _needLoginPages, getNeedLoginPages } from '@/utils'
+import {
+  needLoginPages as _needLoginPages,
+  getNeedLoginPages,
+  goLogin,
+  isLogined,
+  navigateTo,
+  showToast,
+} from '@/utils'
 
 // TODO Check
-const loginRoute = '/pages/login/index'
-
-const isLogined = () => {
-  const userStore = useUserStore()
-  return userStore.isLogined
-}
+const loginRoute = '/pages/login/login'
 
 const isDev = import.meta.env.DEV
 
@@ -21,14 +23,11 @@ const isDev = import.meta.env.DEV
 const navigateToInterceptor = {
   // 注意，这里的url是 '/' 开头的，如 '/pages/index/index'，跟 'pages.json' 里面的 path 不同
   invoke({ url }: { url: string }) {
-    // console.log(url) // /pages/route-interceptor/index?name=feige&age=30
     const path = url.split('?')[0]
-
     let needLoginPages: string[] = []
     // 为了防止开发时出现BUG，这里每次都获取一下。生产环境可以移到函数外，性能更好
     if (isDev) {
       needLoginPages = getNeedLoginPages()
-      console.log(needLoginPages)
     } else {
       needLoginPages = _needLoginPages
     }
@@ -40,8 +39,10 @@ const navigateToInterceptor = {
     if (hasLogin) {
       return true
     }
-    const redirectRoute = `${loginRoute}?redirect=${encodeURIComponent(url)}`
-    uni.navigateTo({ url: redirectRoute })
+    // const redirectRoute = `${loginRoute}?redirect=${encodeURIComponent(url)}`
+    // uni.navigateTo({ url: redirectRoute })
+    showToast('请先登录')
+    goLogin()
     return false
   },
 }

@@ -1,10 +1,18 @@
 import { CustomRequestOptions } from '@/interceptors/request'
+import { goLogin, showToast } from '.'
+import { useUserStore } from '@/store'
 
-export const http = <T>(options: CustomRequestOptions) => {
+export type CustomRequestOptionsProps = CustomRequestOptions & {
+  config?: Record<string, any>
+}
+export const http = <T>(options: CustomRequestOptionsProps) => {
+  const userStore = useUserStore()
   // 1. 返回 Promise 对象
   return new Promise<IResData<T>>((resolve, reject) => {
+    const { config, ...otherOptions } = options
     uni.request({
-      ...options,
+      ...otherOptions,
+      ...config,
       dataType: 'json',
       // #ifndef MP-WEIXIN
       responseType: 'json',
@@ -14,28 +22,30 @@ export const http = <T>(options: CustomRequestOptions) => {
         // 状态码 2xx，参考 axios 的设计
         if (res.statusCode >= 200 && res.statusCode < 300) {
           // 2.1 提取核心数据 res.data
+
+          const data = res.data as ApiResponse<{ code: number }>
+          if (data.code !== 200) {
+            !options.hideErrorToast && showToast(data.desc)
+            if (data.code === 401) {
+              userStore.clearUserInfo()
+              goLogin()
+            }
+          }
           resolve(res.data as IResData<T>)
         } else if (res.statusCode === 401) {
           // 401错误  -> 清理用户信息，跳转到登录页
-          // userStore.clearUserInfo()
-          // uni.navigateTo({ url: '/pages/login/login' })
+          userStore.clearUserInfo()
+          goLogin()
           reject(res)
         } else {
           // 其他错误 -> 根据后端错误信息轻提示
-          !options.hideErrorToast &&
-            uni.showToast({
-              icon: 'none',
-              title: (res.data as IResData<T>).msg || '请求错误',
-            })
+          !options.hideErrorToast && showToast((res.data as ApiResponse<T>).desc)
           reject(res)
         }
       },
       // 响应失败
       fail(err) {
-        uni.showToast({
-          icon: 'none',
-          title: '网络错误，换个网络试试',
-        })
+        showToast('网络错误，换个网络试试')
         reject(err)
       },
     })
@@ -48,11 +58,16 @@ export const http = <T>(options: CustomRequestOptions) => {
  * @param query 请求query参数
  * @returns
  */
-export const httpGet = <T>(url: string, query?: Record<string, any>) => {
+export const httpGet = <T>(
+  url: string,
+  query?: Record<string, any>,
+  config?: Record<string, any>,
+) => {
   return http<T>({
     url,
     query,
     method: 'GET',
+    config,
   })
 }
 
@@ -66,13 +81,14 @@ export const httpGet = <T>(url: string, query?: Record<string, any>) => {
 export const httpPost = <T>(
   url: string,
   data?: Record<string, any>,
-  query?: Record<string, any>,
+  config?: Record<string, any>,
 ) => {
   return http<T>({
     url,
-    query,
+    query: data,
     data,
     method: 'POST',
+    config,
   })
 }
 
