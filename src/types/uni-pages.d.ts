@@ -5,25 +5,19 @@
 
 interface NavigateToOptions {
   url: "/pages/index/index" |
+       "/pages/about/about" |
+       "/pages/demo1/index" |
+       "/pages/demo2/index" |
+       "/pages/demo3/index" |
        "/pages/finance/finance" |
+       "/pages/finance/index" |
        "/pages/finance-center/finance-center" |
+       "/pages/home/index" |
+       "/pages/login/index" |
        "/pages/login/login" |
        "/pages/mine/mine" |
        "/pages/other-login/other-login" |
-       "/pages/policy/policy" |
-       "/pages-sub/assetDataTable/assetDataTable" |
-       "/pages-sub/enterpriseVerify/enterpriseVerify" |
-       "/pages-sub/faceAuthentication/faceAuthentication" |
-       "/pages-sub/policyDetails/policyDetails" |
-       "/pages-sub/productApplication/productApplication" |
-       "/pages-sub/productDetail/productDetail" |
-       "/pages-sub/requirementList/requirementList" |
-       "/pages-sub/search/search" |
-       "/pages-sub/searchInput/searchInput" |
-       "/pages-sub/setting/setting" |
-       "/pages-sub/smartMatching/smartMatching" |
-       "/pages-sub/supplyTrade/supplyTrade" |
-       "/pages-sub/userVerify/userVerify";
+       "/pages/policy/policy";
 }
 interface RedirectToOptions extends NavigateToOptions {}
 

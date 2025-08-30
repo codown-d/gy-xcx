@@ -61,6 +61,35 @@
       }
     },
     {
+      "path": "pages/about/about",
+      "type": "page",
+      "style": {
+        "navigationBarTitleText": "关于"
+      }
+    },
+    {
+      "path": "pages/demo1/index",
+      "type": "page",
+      "style": {
+        "navigationBarTitleText": "home"
+      }
+    },
+    {
+      "path": "pages/demo2/index",
+      "type": "page",
+      "style": {
+        "navigationBarTitleText": "home"
+      }
+    },
+    {
+      "path": "pages/demo3/index",
+      "type": "page",
+      "style": {
+        "navigationBarTitleText": "demo3"
+      },
+      "needLogin": true
+    },
+    {
       "path": "pages/finance/finance",
       "type": "page",
       "layout": "finance",
@@ -69,11 +98,34 @@
       }
     },
     {
+      "path": "pages/finance/index",
+      "type": "page",
+      "layout": "finance",
+      "style": {
+        "navigationStyle": "custom",
+        "navigationBarTitleText": "一键融资"
+      }
+    },
+    {
       "path": "pages/finance-center/finance-center",
       "type": "page",
       "style": {
         "navigationStyle": "custom",
         "navigationBarTitleText": "融资中心"
+      }
+    },
+    {
+      "path": "pages/home/index",
+      "type": "page",
+      "style": {
+        "navigationBarTitleText": "home"
+      }
+    },
+    {
+      "path": "pages/login/index",
+      "type": "page",
+      "style": {
+        "navigationBarTitleText": "home"
       }
     },
     {
@@ -114,146 +166,5 @@
       }
     }
   ],
-  "subPackages": [
-    {
-      "root": "pages-sub",
-      "pages": [
-        {
-          "path": "assetDataTable/assetDataTable",
-          "type": "page",
-          "layout": "assetDataTable",
-          "style": {
-            "navigationStyle": "custom",
-            "navigationBarTitleText": "资产数据入表"
-          }
-        },
-        {
-          "path": "enterpriseVerify/enterpriseVerify",
-          "type": "page",
-          "layout": "authentication",
-          "style": {
-            "navigationStyle": "custom",
-            "navigationBarTitleText": "企业认证"
-          },
-          "bgType": 2,
-          "needLogin": true
-        },
-        {
-          "path": "faceAuthentication/faceAuthentication",
-          "type": "page",
-          "layout": "common",
-          "style": {
-            "navigationStyle": "custom",
-            "navigationBarTitleText": "实名认证",
-            "navigationBarBackgroundColor": "#FFFFFF",
-            "backgroundColor": "#FFFFFF"
-          }
-        },
-        {
-          "path": "policyDetails/policyDetails",
-          "type": "page",
-          "layout": "common",
-          "style": {
-            "navigationStyle": "custom",
-            "navigationBarTitleText": "政策详情",
-            "navigationBarBackgroundColor": "#FFFFFF",
-            "backgroundColor": "#FFFFFF"
-          }
-        },
-        {
-          "path": "productApplication/productApplication",
-          "type": "page",
-          "layout": "authentication",
-          "style": {
-            "navigationStyle": "custom",
-            "navigationBarTitleText": "产品申请"
-          },
-          "bgType": 3
-        },
-        {
-          "path": "productDetail/productDetail",
-          "type": "page",
-          "layout": "searchNavbar",
-          "style": {
-            "navigationStyle": "custom",
-            "navigationBarTitleText": "产品详情"
-          }
-        },
-        {
-          "path": "requirementList/requirementList",
-          "type": "page",
-          "layout": "common",
-          "style": {
-            "navigationStyle": "custom",
-            "navigationBarTitleText": "需求列表",
-            "navigationBarBackgroundColor": "#F5F5F5",
-            "backgroundColor": "#F5F5F5"
-          }
-        },
-        {
-          "path": "search/search",
-          "type": "page",
-          "layout": "default",
-          "style": {
-            "navigationStyle": "custom",
-            "navigationBarTitleText": "搜索"
-          }
-        },
-        {
-          "path": "searchInput/searchInput",
-          "type": "page",
-          "layout": "common",
-          "style": {
-            "navigationStyle": "custom",
-            "navigationBarTitleText": "上一级标题",
-            "navigationBarBackgroundColor": "#FFFFFF",
-            "backgroundColor": "#FFFFFF"
-          }
-        },
-        {
-          "path": "setting/setting",
-          "type": "page",
-          "layout": "common",
-          "style": {
-            "navigationStyle": "custom",
-            "navigationBarTitleText": "账号设置",
-            "navigationBarBackgroundColor": "#F5F5F5",
-            "backgroundColor": "#F5F5F5"
-          },
-          "needLogin": true
-        },
-        {
-          "path": "smartMatching/smartMatching",
-          "type": "page",
-          "layout": "common",
-          "style": {
-            "navigationStyle": "custom",
-            "navigationBarTitleText": "智能匹配",
-            "navigationBarBackgroundColor": "#FFFFFF",
-            "backgroundColor": "#FFFFFF"
-          }
-        },
-        {
-          "path": "supplyTrade/supplyTrade",
-          "type": "page",
-          "layout": "assetDataTable",
-          "style": {
-            "navigationStyle": "custom",
-            "navigationBarTitleText": "供应链贸易"
-          }
-        },
-        {
-          "path": "userVerify/userVerify",
-          "type": "page",
-          "layout": "authentication",
-          "style": {
-            "navigationStyle": "custom",
-            "navigationBarTitleText": "实名认证"
-          },
-          "bgType": 1,
-          "needLogin": true
-        }
-      ]
-    }
-  ]
+  "subPackages": []
 }
